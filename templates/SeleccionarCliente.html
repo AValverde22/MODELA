@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seleccionar Cliente</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/SeleccionarCliente.css') }}">
+    <script src="{{ url_for('static', filename='js/Frontend.js') }}"></script>
+</head>
+<body>
+    <p id="ID_Cajero" style="display:none">{{ID_Cajero}}</p>
+
+    <div class="top-grid-container">
+
+
+        <div><p class="Texto" >Cajero: {{NombreCajero}}</p></div>
+        <div><button class="Boton" onclick="regresarAIniciarSesion()">REGRESAR</button></div>
+
+        <div><button class="Boton" onclick="pasarAMercaderia()">INGRESO DE MERCADERIA</button></div>
+        <div></div>
+
+    </div>
+
+    <h1 class="title">SELECCIONAR CLIENTE</h1>
+
+    <form>
+        <div class="grid-container" id="ClienteGridContainer">
+
+            <div>
+                <div class="sub-grid-container">
+                    <div><label for="clientes" class="Texto">Cliente</label></div>
+                    <div>
+                        <input id="nombreQueSeEscribe" list="clientes" name="cliente" onkeydown="recibirClienteQueSeEscribe()">
+                        <datalist id="clientes"></datalist>
+                    </div>
+                    <div><input type="button" value="Agregar" class="Boton" onclick="on()"></div>
+                </div>
+            </div>
+            <div class="Texto" id="Reporte">Reporte</div>
+
+            <div>
+                <div class="sub-grid-container2" style="overflow:scroll; height:80px; width:100%; overflow:auto" id="ClienteSubGridContainer2">
+                    <table id="comprasRealizadas">
+                        <tr>
+                            <th>Pagar</th>
+                            <th>Fecha Realizada</th>
+                            <th>Total</th>
+                            <th>Deuda</th>
+                        </tr>
+                    </table>
+                </div>
+
+            </div>
+
+            <div>
+                <div class="sub-grid-container3">
+                    <div><input type="button" value="Historial" class="Boton" id="botonHistorial" onclick=""></div>
+                    <div><input type="button" value="Continuar" class="Boton" id="botonContinuar" onclick=""></div>
+
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div id="overlay">
+        <form>
+            <div class="overlay-grid-container">
+                <div>
+                    <div class="overlay-sub-grid-container">
+                        <div><label for="DNICliente" class="Texto">DNI</label></div>
+                        <div><input type="text" id="DNICliente" name="DNICliente"></div>
+
+                        <div><label for="NombreCliente" class="Texto">Nombre</label></div>
+                        <div><input type="text" id="NombreCliente" name="NombreCliente"></div>
+
+                        <div><label for="PrimerApellidoCliente" class="Texto">Primer Apellido</label></div>
+                        <div><input type="text" id="PrimerApellidoCliente" name="PrimerApellidoCliente"></div>
+
+                        <div><label for="SegundoApellidoCliente" class="Texto">Segundo Apellido</label></div>
+                        <div><input type="text" id="SegundoApellidoCliente" name="SegundoApellidoCliente"></div>
+
+                        <div><label for="TelefonoCliente" class="Texto">Teléfono</label></div>
+                        <div><input type="text" id="TelefonoCliente" name="TelefonoCliente"></div>
+
+                        <div><label for="DireccionCliente" class="Texto">Dirección</label></div>
+                        <div><input type="text" id="DireccionCliente" name="DireccionCliente"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="overlay-sub-grid-container2" id="overlay-sub-grid-container2Cambiar">
+                        <div class="Texto">Fiar</div>
+                        <div>
+                            <input type="radio" id="FiarSi" name="Fiar" value="Si" onclick="AgregarSelect()">
+                            <label for="FiarSi" class="Radio">Sí</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="FiarNo" name="Fiar" value="No" onclick="AgregarSelect()">
+                            <label for="FiarNo" class="Radio">No</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="overlay-sub-grid-container3">
+                        <div><input type="button" value="Confirmar" class="Boton" onclick="registrarCliente()"></div>
+                        <div><input type="button" value="Cancelar" class="Boton" onclick="off()"></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    function on() {
+          document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+
+    </script>
+
+</body>
+</html>

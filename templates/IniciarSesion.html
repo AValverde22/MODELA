@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/IniciarSesion.css') }}">
+    <script src="{{ url_for('static', filename='js/Frontend.js') }}"></script>
+</head>
+<body>
+    <h1>INICIAR SESIÓN</h1>
+
+    <form id="iniciarSesion" method="POST">
+        <div class="grid-container">
+
+            <div><label for="usuarioIngresar" class="Texto">Usuario</label></div>
+            <div><input type="text" id="usuarioIngresar" name="usuarioIngresar" required></div>
+
+            <div><label for="contrasenaIngresar" class="Texto">Contraseña</label></div>
+            <div><input type="password" id="contrasenaIngresar" name="contrasenaIngresar" required></div>
+
+            <div class="item">
+                <div class="sub-grid-container">
+                    <div><input type="button" value="Continuar" class="Boton" onclick="iniciarSesionCajero()" id="continuarCajero"></div>
+                    <div><input type="button" value="Nuevo" class="Boton" onclick="on()"></div>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div id="overlay">
+        <form>
+            <div class="overlay-grid-container">
+                <div><label for="NombreCajero" class="Texto">Nombre</label></div>
+                <div><input type="text" id="NombreCajero" name="NombreCajero" required></div>
+
+                <div><label for="ApellidoCajero" class="Texto">Apellido</label></div>
+                <div><input type="text" id="ApellidoCajero" name="ApellidoCajero" required></div>
+
+                <div><label for="DNICajero" class="Texto">DNI</label></div>
+                <div><input type="text" id="DNICajero" name="DNICajero" required></div>
+
+                <div><label for="UsuarioRegistrarCajero" class="Texto">Usuario</label></div>
+                <div><input type="text" id="UsuarioRegistrarCajero" name="UsuarioRegistrarCajero" required></div>
+
+                <div><label for="ContrasenaRegistrarCajero" class="Texto">Contraseña</label></div>
+                <div><input type="password" id="ContrasenaRegistrarCajero" name="ContrasenaRegistrarCajero" required></div>
+
+                <div class="item2">
+                    <div class="overlay-sub-grid-container">
+                        <div><input type="button" value="Confirmar" class="Boton" onclick="registrarCajero()"></div>
+                        <div><input type="button" value="Cancelar" class="Boton" onclick="off()" required></div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    function on() {
+      document.getElementById("overlay").style.display = "block";
+    }
+
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+    </script>
+</body>
+</html>

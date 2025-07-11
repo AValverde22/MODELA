@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de Productos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/RegistroDeProductos.css') }}">
+    <script src="{{ url_for('static', filename='js/Frontend.js') }}"></script>
+</head>
+<body onload="ponerNombreClienteEnProductos()">
+    <p class="Texto" id="nombreCompletoCliente">Cliente: {{nombreCompleto}}</p>
+
+    <h1>REGISTRO DE PRODUCTOS</h1>
+
+    <div class="grid-container">
+        <div class="item1">
+            <form>
+                <div class="sub-grid-container">
+                    <div>
+                        <div class="subsub-grid-container">
+                            <div><label for="productos" class="Texto">Producto</label></div>
+                            <div>
+                                <input id="productoQueSeEscribe" list="productos" name="producto" onkeyup="recibirProductoQueSeEscribe()">
+                                <datalist id="productos"></datalist>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div class="subsub-grid-container">
+                            <div><label for="cantidad" class="Texto">Cantidad</label></div>
+                            <div><input type="number" id="cantidad" name="cantidad" min="0"></div>
+
+                            <div><label for="precioUnitario" class="Texto">Precio Unitario</label></div>
+                            <div><input type="text" id="precioUnitario" name="precioUnitario" readonly></div>
+
+                            <div><p class="Texto" id="IDProducto" style="display:none"></p></div>
+
+                            <div class="Texto" id="StockProductoString"></div>
+                            <div><p class="Texto" id="StockProducto" style="display:none"></p></div>
+
+                            <div><input type="button" value="AGREGAR" class="Boton" onclick="" id="botonAgregar"></div>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="item2">
+            <form>
+                <div class="sub-grid-container2">
+                    <div><p class="Texto" id="SubTotalOPInafecta">Subtotal OP Inafecta:</p></div>
+                    <div><p class="Texto" id="SubTotalOPGravada">Subtotal OP Gravada:</p></div>
+                    <div><p class="Texto" id="IGV">IGV:</p></div>
+                    <div><p class="Texto" id="Total">Total a Pagar:</p></div>
+                    <div class="subsub-grid-container2">
+                        <div><input type="button" value="CONFIRMAR" class="Boton" onclick="on()"></div>
+                        <div><input type="button" value="CANCELAR" class="Boton" onclick="eliminarTodo()"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="item3">
+             <table id="TablaProductos">
+                    <tr>
+                        <th>Eliminar</th>
+                        <th>Producto</th>
+                        <th>Precio Unitario</th>
+                        <th>Cantidad</th>
+                        <th>Precio Total</th>
+                    </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+    <div id="overlay">
+        <form>
+            <div class="overlay-grid-container">
+                <div>Medio de Pago</div>
+                <div class="overlay-sub-grid-container">
+                    <div>
+                        <input type="radio" id="Tarjeta" name="MedioDePago" value="Tarjeta">
+                        <label for="Tarjeta">Tarjeta</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Efectivo" name="MedioDePago" value="Efectivo">
+                        <label for="Efectivo">Efectivo</label>
+                    </div>
+                </div>
+
+                <div class="overlay-sub-grid-container2" id="overlay-sub-grid-containerCambiar">
+
+                </div>
+
+                <div>Seleccionar Método de Pago</div>
+                <div class="overlay-sub-grid-container3">
+                    <div>
+                        <input type="radio" id="Boleta" name="MetodoDePago" value="Boleta">
+                        <label for="Boleta">Boleta</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="Factura" name="MetodoDePago" value="Factura">
+                        <label for="Factura">Factura</label>
+                    </div>
+                </div>
+
+                <div><p class="Texto" id="TotalPagar">Total:  </div>
+
+                <div class="overlay-sub-grid-container4">
+                    <div><input type="button" value="PAGAR" class="Boton" onclick="Pagar()"></div>
+                    <div><input type="button" value="CANCELAR" class="Boton" onclick="off()"></div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+    function on() {
+        if(document.getElementById("Total").innerText == "Total a Pagar:" || document.getElementById("Total").innerText == "Total a Pagar: " + 0) {alert("No se ha registrado ningun producto");}
+         else {document.getElementById("overlay").style.display = "block";};
+    }
+
+    function off() {
+      document.getElementById("overlay").style.display = "none";
+    }
+    </script>
+</body>
+
+
+</html>

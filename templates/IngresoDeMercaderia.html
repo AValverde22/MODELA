@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso De Mercadera</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/IngresoDeMercaderia.css') }}">
+
+    <script src="{{ url_for('static', filename='js/Frontend.js') }}"></script>
+</head>
+<body onload="recibirTodosLosProductosMercaderia()">
+    <button onclick="regresarASeleccionarCliente()" class="Boton">Regresar</button>
+    <h1>INGRESO DE MERCADERÍA</h1>
+
+    <div class="mega-grid-container">
+        <div>
+            <div class="grid-container">
+                <div>
+                    <div class="sub-grid-container">
+                        <div><label for="productosMercaderia" class="Texto">Producto</label></div>
+                        <div>
+                            <input id="productoInput" list="productosMercaderia" name="productoInput" onkeyup="recibirProductoQueSeEscribeMercaderia()">
+                            <datalist id="productosMercaderia"></datalist>
+                        </div>
+
+                        <div><label for="CantidadMercaderia" class="Texto">Cantidad</label></div>
+                        <div><input type="Number" id="CantidadMercaderia" name="Cantidad" min="0"></div>
+
+                        <div><label for="CostoMercaderia" class="Texto">Costo</label></div>
+                        <div><input type="Number" id="CostoMercaderia" name="Costo" min="0"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="sub-grid-container2">
+                        <input type="button" value="Guardar" class="Boton" id="botonGuardarMerca" onclick="">
+                        <input type="button" value="Nuevo" class="Boton" onclick="on()">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div  style="overflow:scroll; height:500px; width:100%; overflow:auto" >
+            <table id="StockProductos">
+            </table>
+        </div>
+    </div>
+
+    <div id="overlayMercaderia">
+        <div class="overlay-grid-container">
+            <div>
+                <div>
+                    <div class="overlay-sub-grid-container">
+                        <div><label for="ProductoRegistro" class="Texto">Producto</label></div>
+                        <div><input type="Text" id="ProductoRegistro" name="ProductoRegistro"></div>
+
+                        <div><label for="StockRegistro" class="Texto">Stock</label></div>
+                        <div><input type="Number" id="StockRegistro" name="Stock" min="0"></div>
+
+                        <div><label for="PrecioUnitarioRegistro" class="Texto">Precio Unitario</label></div>
+                        <div><input type="Number" id="PrecioUnitarioRegistro" name="PrecioUnitario" min="0"></div>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="overlay-sub-grid-container2">
+                        <div class="Texto">Tipo Operacion</div>
+                        <div>
+                            <input type="radio" id="Gravada" name="Operacion" value="Gravada">
+                            <label for="Gravada" class="Radio">Gravada</label>
+                        </div>
+                        <div>
+                            <input type="radio" id="Inafecta" name="Operacion" value="Inafecta">
+                            <label for="Inafecta" class="Radio">Inafecta</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="overlay-sub-grid-container3">
+                    <input type="button" value="Registrar" class="Boton" id="botonRegistrar" onclick="registrarNuevoProducto()">
+                    <input type="button" value="Cancelar" class="Boton" id="botonCancelar" onclick="off()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    function on() {
+        document.getElementById("overlayMercaderia").style.display = "block";
+    }
+
+    function off() {
+      document.getElementById("overlayMercaderia").style.display = "none";
+    }
+    </script>
+
+</body>
+</html>

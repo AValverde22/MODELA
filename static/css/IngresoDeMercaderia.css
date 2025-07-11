@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+body{
+    background-color: #f8f8f8;
+}
+
+h1{
+    text-align: center;
+    font-size: 30px;
+
+    font-family: "Inter", sans-serif;
+    margin-bottom: 50px;
+}
+
+#overlayMercaderia {
+    position: fixed;
+    display: none;
+
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0,0,0,0.7);
+}
+
+.Texto {
+    color: black;
+    font-size: 14px;
+
+    font-weight: 700;
+    font-family: "Inter", sans-serif;
+}
+
+.Boton {
+    background-color: #54bf97;
+    border-radius: 3px;
+    border: 1px;
+
+    color: white;
+    font-weight: 500;
+    font-family: "Inter", sans-serif;
+    font-size: 13px;
+
+    padding: 6px 10px 6px 10px;
+    margin-top: 5px;
+}
+
+#StockProductos{
+    margin-right: 10px;
+}
+
+.mega-grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+
+    column-gap: 200px;
+}
+
+.grid-container{
+    display: grid;
+    place-content: center;
+
+    row-gap: 15px;
+}
+
+.sub-grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+
+    column-gap: 15px;
+    row-gap: 10px;
+}
+
+.sub-grid-container2{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+
+    column-gap: 15px;
+ }
+
+.overlay-grid-container{
+    display: grid;
+    grid-template-columns: auto;
+    place-content: center;
+
+    margin-top: 10%;
+    margin-left: 33%;
+
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+
+    padding: 10px;
+
+    height: 200px;
+    width: 350px;
+
+    border-radius: 7px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0px rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.overlay-sub-grid-container{
+    display: grid;
+    grid-template-columns: auto auto;
+
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+.overlay-sub-grid-container2{
+    display: grid;
+    grid-template-columns: auto auto auto;
+
+    column-gap: 10px;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.overlay-sub-grid-container3{
+    display: grid;
+    grid-template-columns: auto auto;
+    place-content: center;
+
+    column-gap: 15px;
+ }
