@@ -10,7 +10,7 @@
 3. Ahora, dirigirse a MySQL Workbench CE
    - Crar una nueva conexión si lo ve necesario.
    - En el panel de "Administration", seleccionar la opción de "Data Import/Restore" y seleccionar el archivo Bodega.sql
-   - Para comprobar que la base de datos se haya cargado correctamente, ejecutar el comando "USE Bodega;" y "SELECT * FROM Cajero;".
+   - Para comprobar que la base de datos se haya cargado correctamente, ejecutar el comando `USE Bodega;` y `SELECT * FROM Cajero;`.
 
 4. Crear un archivo `.env` en la raíz con este contenido:
    - `DB_USER=root`
