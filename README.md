@@ -23,4 +23,4 @@
    - Ejecutar el script de `backend.py`
    - En la terminal, abrir el enlace.
 
-- En Bodega.zip, se encuentran todos las sentencias SQL
+- En `Bodega.zip`, se encuentran todos las sentencias SQL
