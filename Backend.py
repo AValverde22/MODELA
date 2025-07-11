@@ -316,6 +316,7 @@ def recibirClienteQueSeEscribe():
         cur = bodega.connection.cursor()
         cur.execute('Use Bodega;')
         cur.execute('CALL pagarDeuda(%s);' % request.json['ID_BoletaCabeceraPagar'])
+        cur.execute('UPDATE Cliente c JOIN BoletaCabecera b ON c.ID_Cliente = b.ID_Cliente SET c.ID_FP = 1 WHERE c.ID_Cliente = b.ID_Cliente; COMMIT;')
 
         return "Deuda Cancelada"
 
