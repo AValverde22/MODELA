@@ -5,10 +5,10 @@ from flask_cors import CORS, cross_origin
 
 app = Flask(__name__)
 cors = CORS(app)
-app.config['MYSQL_HOST'] = os.environ.get('DB_HOST', 'localhost')
-app.config['MYSQL_USER'] = os.environ.get('DB_USER', 'root')
-app.config['MYSQL_PASSWORD'] = os.environ.get('DB_PASSWORD', '')
-app.config['MYSQL_DB'] = os.environ.get('DB_NAME', 'Bodega')
+app.config['MYSQL_HOST'] = "127.0.0.1"
+app.config['MYSQL_USER'] = "root" # CAMBIAR "root" EN CASO TENGA OTRO NOMBRE DE USUARIO
+app.config['MYSQL_PASSWORD'] = "Beta2022" # CAMBIAR "Beta2022" EN CASO HAYA ESCRITO OTRA CONTRASEÑA AL CREAR MYSQL WORKBENCH
+app.config['MYSQL_DATABASE'] = "Bodega"
 bodega = MySQL(app)
 
 # DICCIONARIO QUE SE EMPLEARÁ A LO LARGO DEL PROGRAMA PARA ALMACENAR LOS ID'S Y LOS DISTINTOS VALORES QUE SE NECESITEN.
