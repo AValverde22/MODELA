@@ -153,6 +153,8 @@ async function registrarNuevoProducto(){
     ProductoRegistro.value = "";
     StockRegistro.value = "";
     PrecioUnitarioRegistro.value = "";
+
+    recibirTodosLosProductosMercaderia();
 }
 
 // FUNCIONES PARA RegistroDeProductos.html
