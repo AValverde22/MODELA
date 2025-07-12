@@ -3,7 +3,7 @@
 1. Clona el repositorio:
    - `git clone https://github.com/AValverde22/MODELA.git`
 
-2. Para este caso, abrir MySQL Configurator o simplemente activar el servicio `MySQL80`
+2. Para este caso, abrir MySQL Configurator o simplemente activar el servicio MySQL que puede ser `MySQL80`
    - En la pantalla de "Type and Networking" solo presionar el botón de "Next".
    - En la pantalla de "Accounts and Roles" escribir la contraseña que usted creo al momento de instalar el programa y presionar el botón de "Check".
 
