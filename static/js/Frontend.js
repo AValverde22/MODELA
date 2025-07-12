@@ -438,9 +438,9 @@ function AgregarSelect(){
 
             <label for="Frecuencia" class="Texto">Frecuencia</label>
             <select id="Frecuencia" name="Frecuencia">
-                <option value="En 7 dias">Cada Domingo</option>
-                <option value="En 15 dias">Cada Quincena</option>
-                <option value="En 30 dias">Cada Fin de Mes</option>
+                <option value="Cada Domingo">Cada Domingo</option>
+                <option value="Cada Quincena">Cada Quincena</option>
+                <option value="Cada Fin de Mes">Cada Fin de Mes</option>
             </select>
         `
     } else {
